@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FNA">
