@@ -93,7 +93,7 @@ namespace Arcanoid_Shelkynov
 
             if (ball.Position.Y > graphics.PreferredBackBufferHeight)
             {
-                isGameOver = true;
+                RestartGame();
             }
             base.Update(gameTime);
         }
