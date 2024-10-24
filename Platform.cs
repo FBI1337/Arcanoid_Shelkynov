@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Arcanoid_Shelkynov
 {
+    /// <summary>
+    /// Класс платформы тут описывается текстура, позиция и скорость
+    /// </summary>
     public class Platform
     {
         public Texture2D Texture { get; private set; }

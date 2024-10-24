@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arcanoid_Shelkynov
 {
+    /// <summary>
+    /// Класс мячика сдесь инициализируем его текстуру, позицию и скорость
+    /// </summary>
     public class Ball
     {
         public Texture2D Texture { get; private set; }

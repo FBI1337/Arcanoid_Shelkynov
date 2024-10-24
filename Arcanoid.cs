@@ -18,8 +18,10 @@ namespace Arcanoid_Shelkynov
         private Brick[] bricks;
         private int score;
         private bool isGameOver;
-
-        public Arcanoid() //This is the constructor, this function is called whenever the game class is created.
+        /// <summary>
+        /// Это конструктор арконойда. Инициализирует все параметры графики.
+        /// </summary>
+        public Arcanoid()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -27,17 +29,15 @@ namespace Arcanoid_Shelkynov
             graphics.IsFullScreen = true;
             graphics.ApplyChanges();
         }
-
         /// <summary>
-        /// This function is automatically called when the game launches to initialize any non-graphic variables.
+        /// Инициализация игры. Здесь добавляется логика
         /// </summary>
         protected override void Initialize()
         {
             base.Initialize();
         }
-
         /// <summary>
-        /// Automatically called when your game launches to load any game assets (graphics, audio etc.)
+        /// Загрузка текстур платформы, мячика и кирпичиков
         /// </summary>
         protected override void LoadContent()
         {
@@ -63,22 +63,15 @@ namespace Arcanoid_Shelkynov
                 }
             }
         }
-
         /// <summary>
-        /// Called each frame to update the game. Games usually runs 60 frames per second.
-        /// Each frame the Update function will run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
+        /// Обработка нажатий на клавиши
         /// </summary>
         protected override void Update(GameTime gameTime)
         {
 
-            if (isGameOver)
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                {
-                    RestartGame();
-                }
-                return;
+                RestartGame();
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -104,9 +97,8 @@ namespace Arcanoid_Shelkynov
             }
             base.Update(gameTime);
         }
-
         /// <summary>
-        /// This is called when the game is ready to draw to the screen, it's also called each frame.
+        /// Отрисовка кирпичиков, платформы и мячика
         /// </summary>
         protected override void Draw(GameTime gameTime)
         {
@@ -131,6 +123,8 @@ namespace Arcanoid_Shelkynov
             score = 0;
             ball = ball = new Ball(GraphicsDevice, new Vector2(400, 300), new Vector2(150, 150));
             platform = new Platform(GraphicsDevice, new Vector2(400, 450));
+
+            LoadContent();
         }
     }
 }

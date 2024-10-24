@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arcanoid_Shelkynov
 {
+    /// <summary>
+    /// Класс кирпичей тут объясняется их текстура, позиция и состояние сломаные или нет
+    /// </summary>
     public class Brick
     {
         public Texture2D Texture { get; private set; }
