@@ -31,10 +31,6 @@ namespace Arcanoid_Shelkynov
             {
                 Speed = new Vector2(-Speed.X, Speed.Y);
             }
-            if (Position.Y <= 0 || Position.Y + Texture.Height >= 480)
-            {
-                Speed = new Vector2(Speed.X, -Speed.Y);
-            }
             if (Position.Y + Texture.Height >= platform.Position.Y &&
                 Position.X + Texture.Width >= platform.Position.X &&
                 Position.X <= platform.Position.X + platform.Texture.Width)
